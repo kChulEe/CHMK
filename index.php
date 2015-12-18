@@ -5,43 +5,7 @@
     </head>
     
     <body>
-    
-        <?php
-
-            phpinfo();
-            echo ("sdaf");
-            $host="127.0.0.1";
-            $port=3306;
-            $socket="";
-            $user="root";
-            $password="";
-            $dbname="DaeBahk";
-
-           $conn = new mysqli($host, $user, $password, $dbname, $port, $socket)
-                or die ('Could not connect to the database server' . mysqli_connect_error());
-
-           $query = "select * from shirts";
-
-
-            if ($stmt = $con->prepare($query)) {
-                $stmt->execute();
-                $stmt->bind_result($field1, $field2);
-                while ($stmt->fetch()) {
-                    printf("%s, %s\n", $field1, $field2);
-                }
-                $stmt->close();
-            }
-            $conn->close();
-
-   
-        ?>
-
-        
-        
-        
-        
-        
-        
+  
         <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
         <div id="player"></div>
         
@@ -86,6 +50,44 @@
         
         </script>
         
+        <div>
+          <ul>
+            <?php
+                include 'includes/sql_connect.php';
+
+                $query1 = "select * from pants";
+                if ($stmt = $con->prepare($query1)) {
+                    $stmt->execute();
+                    $stmt->bind_result($field1, $field2, $field3, $field4, $field5);
+                    if ($stmt->fetch() == "TRUE") {
+                        $image = $field5;
+                        echo '<img src="'.$image.'" width="100" height="100" />';
+                        printf("%s, %s, $%s \n", $field2, $field3, $field4);
+                        printf("\n");
+                    }
+                    $stmt->close();
+                }
+            ?>
+          </ul>
+          <ul>
+            <?php
+                $query2 = "select * from shirts";
+                if ($stmt = $con->prepare($query2)) {
+                    $stmt->execute();
+                    $stmt->bind_result($field1, $field2, $field3, $field4, $field5);
+                    if ($stmt->fetch() == "TRUE") {
+                        $image = $field5;
+                        echo '<img src="'.$image.'" width="100" height="100" />';
+                        printf("%s, %s, $%s \n", $field2, $field3, $field4);
+                    }
+                    $stmt->close();
+                }
+
+            ?>
+          </ul>
+        </div>
+
+
         
         
     </body>
