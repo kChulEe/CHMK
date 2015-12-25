@@ -2,15 +2,20 @@
 <html lang="ko">
     <head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="infopage.css">
-		<!--ajax import line-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/infopage.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+	
 		
    		<!--slide button function-->
 		<script>
 			$(document).ready(function(){
 				$("button").click(function(){
-					$("p").slideToggle();
+					$("#infoDisplay").slideToggle();
 				});
 			});
 		</script>		
@@ -24,8 +29,8 @@
 			var player;
 			function onYouTubeIframeAPIReady() {
 				player = new YT.Player('player', {
-					height: '390',
-					width: '640',
+					height: '475',
+					width: '840',
 					videoId: 'HUtUa8DFq3Q',
 					events: {
 						'onReady': onPlayerReady,
@@ -88,21 +93,60 @@
 			}
         </script>
 		
+		 <style>
+			 /* Remove the navbar's default margin-bottom and rounded borders */ 
+			.navbar {
+			  margin-bottom: 0;
+			  border-radius: 0;
+			}
+
+			/* Add a gray background color and some padding to the footer */
+			footer {
+			  background-color: #111;
+			  padding: 10px;
+			  
+			}
+		</style>
 	</head>
 	
 	<body>
+		<nav class="navbar navbar-custom">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li><a href="#">TV</a></li>
+				<li><a href="#">방송VOD</a></li>
+				<li><a href="#">영화</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</nav>
 		
-		<div id="header">
-			<ul>
-			  <li><a class="active" href="#tv">TV</a></li>
-			  <li><a href="#vod">방송VOD</a></li>
-			  <li><a href="#movies">영화</a></li>
-			</ul>
+		<div class="jumbotron" style="backgroud: #333">
+		  <div class="container text-center">
+			<p id="player"></p>
+		  </div>
 		</div>
-		<div id="player"></div>
+		
+		
 		<div id="button"><button>Toggle Img goes HERE</button></div>
 		<p id="infoDisplay"></p>  
 		<div id="comment">Comment Goes Here</div>
-		<div id="footer">Footer Goes Here</div>
-		
+
+		<div>
+			<footer class="container-fluid text-center">
+			  <p>Footer Text</p>
+			</footer>
+		</div>
 	</body>

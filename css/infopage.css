@@ -1,0 +1,22 @@
+.navbar-custom {
+    background-color:#ffffff;
+    color:#333;
+    border-radius:0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#333;
+}
+
+.navbar-custom .navbar-brand {
+    color:#333;
+}
+
+.navbar-custom .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+    background-color: transparent;
+    color: #D4AF37;
+}
+
+.jumbotron {
+	background-color: black;
+}
