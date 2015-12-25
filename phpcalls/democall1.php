@@ -42,8 +42,49 @@
 				  echo "</tr>";
 			  }
 			  echo "</table>";
+
 		
 			 $query2 = "select * from shirts where shirt_id = 2";
+			 $result = mysqli_query($con,$query2);
+
+			 echo "<table>
+				<tr>
+				<th>Image</th>
+				<th>Brand</th>
+				<th>Name</th>
+				<th>Price</th>
+				</tr>";
+			  while($row = mysqli_fetch_array($result)) {
+				  echo "<tr>";
+				  echo "<td>" . '<img src="'.$row['shirt_image'].'" width="100" height="100" />' . "</td>";
+				  echo "<td>" . $row['shirt_brand'] . "</td>";
+				  echo "<td>" . $row['shirt_name'] . "</td>";
+				  echo "<td>" . $row['shirt_price'] . "</td>";
+				  echo "</tr>";
+			  }
+			  echo "</table>";
+		
+			$query2 = "select * from shirts where shirt_id = 2";
+			 $result = mysqli_query($con,$query2);
+
+			 echo "<table>
+				<tr>
+				<th>Image</th>
+				<th>Brand</th>
+				<th>Name</th>
+				<th>Price</th>
+				</tr>";
+			  while($row = mysqli_fetch_array($result)) {
+				  echo "<tr>";
+				  echo "<td>" . '<img src="'.$row['shirt_image'].'" width="100" height="100" />' . "</td>";
+				  echo "<td>" . $row['shirt_brand'] . "</td>";
+				  echo "<td>" . $row['shirt_name'] . "</td>";
+				  echo "<td>" . $row['shirt_price'] . "</td>";
+				  echo "</tr>";
+			  }
+			  echo "</table>";
+		
+			$query2 = "select * from shirts where shirt_id = 1";
 			 $result = mysqli_query($con,$query2);
 
 			 echo "<table>

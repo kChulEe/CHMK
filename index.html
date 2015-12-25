@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="infopage.css">
+		<!--ajax import line-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+   		<!--slide button function-->
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("p").slideToggle();
+				});
+			});
+		</script>		
+		
+		<!--youtube video player-->
+		<script>
+			var tag = document.createElement('script');
+			tag.src = "https://www.youtube.com/iframe_api";
+			var firstScriptTag = document.getElementsByTagName('script')[0];
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			var player;
+			function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+					height: '390',
+					width: '640',
+					videoId: 'HUtUa8DFq3Q',
+					events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+					}
+				});
+			}
+			//automatically plays video once it loads
+			function onPlayerReady(event) {
+				event.target.playVideo();
+			}
+			//variable made for indicating frames
+			var videoTime = 0;
+			//whenever the video is paused, following calls are made
+			function onPlayerStateChange(event) {
+				if (event.data == 2) {
+					videoTime = player.getCurrentTime();
+					//testing if frame progression works
+				    //document.getElementById("demo").innerHTML = videoTime;
+					
+					//start frame selection
+					if (videoTime > 15 && videoTime < 30) {
+						if (window.XMLHttpRequest) {
+							xmlhttp = new XMLHttpRequest();
+        				} else {
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+								//document.getElementById("demo1").innerHTML = xmlhttp.responseText;
+								var sqlresult = xmlhttp.responseText;
+								document.getElementById("infoDisplay").innerHTML = sqlresult;
+							}	
+						};
+						//call php function with its path
+						xmlhttp.open("GET","phpcalls/democall.php?q=",true);
+						xmlhttp.send();
+					}
+					//start frame selection
+					if (videoTime > 40 && videoTime < 50) {
+						if (window.XMLHttpRequest) {
+							xmlhttp = new XMLHttpRequest();
+        				} else {
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						}
+						xmlhttp.onreadystatechange = function() {
+							if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+								document.getElementById("demo1").innerHTML = xmlhttp.responseText;
+							}	
+						};
+						//call php function with its path
+						xmlhttp.open("GET","phpcalls/democall1.php?q=",true);
+						xmlhttp.send();
+					//every other frame, show blank in the placeholder
+					}
+					else {
+						document.getElementById("infoDisplay").innerHTML = "";
+					}
+				}
+			}
+        </script>
+		
+	</head>
+	
+	<body>
+		
+		<div id="header">
+			<ul>
+			  <li><a class="active" href="#tv">TV</a></li>
+			  <li><a href="#vod">방송VOD</a></li>
+			  <li><a href="#movies">영화</a></li>
+			</ul>
+		</div>
+		<div id="player"></div>
+		<div id="button"><button>Toggle Img goes HERE</button></div>
+		<p id="infoDisplay"></p>  
+		<div id="comment">Comment Goes Here</div>
+		<div id="footer">Footer Goes Here</div>
+		
+	</body>
