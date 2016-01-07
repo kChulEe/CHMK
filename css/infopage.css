@@ -1,22 +1,211 @@
-.navbar-custom {
-    background-color:#ffffff;
-    color:#333;
-    border-radius:0;
-}
-
-.navbar-custom .navbar-nav > li > a {
-    color:#333;
-}
-
-.navbar-custom .navbar-brand {
-    color:#333;
-}
-
-.navbar-custom .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-    background-color: transparent;
-    color: #D4AF37;
-}
+.navbar-normal { background-color: #FFFFFF}
+.navbar-normal .navbar-nav>.active>a:hover,.navbar-normal .navbar-nav>li>a:hover, .navbar-normal .navbar-nav>li>a:focus { background-color: #FFFFFF}
+.navbar-normal .navbar-nav>.active>a,.navbar-normal .navbar-nav>.open>a,.navbar-normal .navbar-nav>.open>a, .navbar-normal .navbar-nav>.open>a:hover,.navbar-normal .navbar-nav>.open>a, .navbar-normal .navbar-nav>.open>a:hover, .navbar-normal .navbar-nav>.open>a:focus { background-color: #FFFFFF}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #D4AF37}
+.navbar-normal { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-normal { border-color: #FFFFFF}
+.navbar-normal .navbar-brand { color: #D4AF37}
+.navbar-normal .navbar-brand:hover { color: #D4AF37}
+.navbar-normal .navbar-nav>li>a { color: #333333}
+.navbar-normal .navbar-nav>li>a:hover, .navbar-normal .navbar-nav>li>a:focus { color: #D4AF37}
+.navbar-normal .navbar-nav>.active>a,.navbar-normal .navbar-nav>.open>a, .navbar-normal .navbar-nav>.open>a:hover, .navbar-normal .navbar-nav>.open>a:focus { color: #D4AF37}
+.navbar-normal .navbar-nav>.active>a:hover, .navbar-normal .navbar-nav>.active>a:focus { color: #D4AF37}
+.dropdown-menu>li>a { color: #333333}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
+.navbar-normal .navbar-nav>.dropdown>a .caret { border-top-color: #999999}
+.navbar-normal .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-normal .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
+.navbar-normal .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
 .jumbotron {
 	background-color: black;
+	height: 600px;
+	padding-top: 0px;
+	margin-bottom: 0px;
 }
+
+.container-fluid {
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+	margin-top: 0 !important;
+	width: 100%;
+	background-color:#e3e3e3;
+	align-content: center;
+	display: inline-block;
+	
+}
+
+.container1 {
+	margin-top: 0 !important;
+	width: 80%;
+	background-color: transparent;
+	display: inline-block;
+	
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  align-content: center;
+  align-items: center;
+}
+
+
+#videoHeading {
+	color: white;
+}
+
+#infoDisplay1 {
+	display: none;
+}
+
+#slide-button {
+	background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer
+    overflow: hidden;
+    outline:none;
+	color: white;
+	padding-top: 15px;
+}
+
+.caption {
+	float: left;
+	margin-top: 10px;
+	margin-left: 12px;
+}
+
+.thumbnail right-caption {
+	margin-bottom: 0px !important;
+	margin-top: 0px !important;
+}
+
+.thumbnail.right-caption > img {
+	margin-top: 2px;
+    float: left;
+    margin-right: 9px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+}
+
+.thumbnail.right-caption > .caption {
+    padding: 2px;
+}
+
+.table th, .table td { 
+	padding: 0.5px !important;
+     border: none !important; 
+	
+ }
+
+#info-display-panel {
+	border: transparent;
+	width: 400px;
+
+	padding-right: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+
+.button-center {
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+	padding-top: 2px !important;
+}
+
+
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 2px auto;
+   height: 0;
+   width: 100%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top: 1.5px solid black;
+   border-bottom: 1px solid #ffffff;
+}
+
+.view {
+   width: 120px;
+   height: 150px;
+   margin: 4px;
+   float: left;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   box-shadow: 0px 0px 2px #aaa;
+ 	-webkit-transition: all 0.15s ease;
+}
+
+.view .mask, .view .content {
+   width: 120px;
+   height: 150px;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
+
+.view img {
+   display: block;
+   position: relative;
+}
+
+.view a.info {
+    background: rgba(0, 0, 0, 0) url("https://cdn3.iconfinder.com/data/icons/mixed-ui-icons-3/93/Untitled-124-128.png") no-repeat scroll center center / 100% auto;
+    display: inline-block;
+    height: 20px;
+    padding: 20px;
+    text-decoration: none;
+    text-indent: -9999px;
+    width: 20px;
+}
+
+.third-effect .mask {
+   opacity: 0;
+   overflow:visible;
+   background-color: rgba(0, 0, 0, 0.7);
+   box-sizing:border-box;
+   transition: all 0.4s ease-in-out;
+   padding-top: 40px;
+}
+
+.third-effect a.info {
+   position:relative;
+   top:0px /* Center the link */
+   opacity: 0;
+   transition: opacity 0.5s 0s ease-in-out;
+}
+
+.third-effect:hover .mask {
+   opacity: 1;
+   background-color: rgba(0, 0, 0, 0.7);
+	pointer-events:none;
+	padding-top: 40px;
+}
+
+.third-effect:hover a.info {
+   opacity:1;
+   transition-delay: 0.3s;
+}
+

@@ -1,15 +1,20 @@
 <?php
-           
-    $host="localhost";
-    $port=8889;
-    $socket="/Applications/MAMP/tmp/mysql/mysql.sock";
-    $user="root";
-    $password="root";
-    $dbname="db";
+    
 
-    $con = new mysqli($host, $user, $password, $dbname, $port, $socket)
-        or die ('Could not connect to the database server' . mysqli_connect_error());
+	$host="127.0.0.1";
+	$port=3306;
+	$socket="";
+	$user="root";
+	$password="";
+	$dbname="DaeBahk";
 
-    //$con->close();
+	$con = new mysqli($host, $user, $password, $dbname, $port, $socket)
+		or die ('Could not connect to the database server' . mysqli_connect_error());
+		$con->set_charset('utf8');
+	//$con->close();
+
 
 ?>
+
+
+

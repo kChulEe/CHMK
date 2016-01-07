@@ -73,6 +73,40 @@
 			 }
 		?>
 		
+		<?php
+			include '../includes/sql_connect.php';
+			$query1 = "select * from clothes where id_clothes = 6";
+			$result = mysqli_query($con,$query1);	
+		
+			 while($row = mysqli_fetch_array($result)) {
+				global $id5, $model5, $brand5, $name5, $price5, $image5, $link5;
+				 	$id5 = $row['id_clothes'];
+				 	$model5 = $row['clothes_model'];
+				 	$brand5 = $row['clothes_brand'];
+				 	$name5 = $row['clothes_name'];
+				 	$price5 = $row['clothes_price'];
+				 	$image5 = $row['clothes_img'];
+				 	$link5 = $row['clothes_link'];
+			 }
+		?>
+		
+		<?php
+			include '../includes/sql_connect.php';
+			$query1 = "select * from clothes where id_clothes = 4";
+			$result = mysqli_query($con,$query1);	
+		
+			 while($row = mysqli_fetch_array($result)) {
+				global $id6, $model6, $brand6, $name6, $price6, $image6, $link6;
+				 	$id6 = $row['id_clothes'];
+				 	$model6 = $row['clothes_model'];
+				 	$brand6 = $row['clothes_brand'];
+				 	$name6 = $row['clothes_name'];
+				 	$price6 = $row['clothes_price'];
+				 	$image6 = $row['clothes_img'];
+				 	$link6 = $row['clothes_link'];
+			 }
+		?>
+		
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					
@@ -223,8 +257,78 @@
 						  </table>
 					  </div>
 					</div>
+
+					<div class="thumbnail right-caption" id="info-display-panel">
+						<div class="view third-effect">	
+							<img src="<?= $image5 ?>" alt="image" style="height:150px;max-width:120px;" usemap="#<?= $id5 ?>">
+							<map name="<?= $id5 ?>">
+								<area shape="rect" coords="0,0,120,150" href="<?= $image5 ?>" data-lighter>	
+							<div class="mask">  
+								 <a href="#" class="info" title="Full Image">Full Image</a></a>
+							</div> 
+							</map>			
+						</div>
+					  <div class="caption">
+						<h4><?= $model5 ?></h4>
+						  <hr>
+						  <table class="table table-condensed">
+							<tbody>
+							  <tr>
+								<td>이름</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $name5 ?></td>
+							  </tr>
+							  <tr>
+								<td>브랜드</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $brand5 ?></td>
+							  </tr>
+							  <tr>
+								<td>가격</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $price5 ?></td>
+							  </tr>
+							  <tr>
+								<td>링크</td>
+								<td>&nbsp;&nbsp;&nbsp;<a href="<?= $link5 ?>"><?= $link5 ?> </a></td>
+							  </tr>
+							</tbody>
+						  </table>
+					  </div>
+					</div>
 				
-				
+				<div class="thumbnail right-caption" id="info-display-panel">
+						<div class="view third-effect">	
+							<img src="<?= $image6 ?>" alt="image" style="height:150px;max-width:120px;" usemap="#<?= $id6 ?>">
+							<map name="<?= $id6 ?>">
+								<area shape="rect" coords="0,0,120,150" href="<?= $image6 ?>" data-lighter>	
+							<div class="mask">  
+								 <a href="#" class="info" title="Full Image">Full Image</a></a>
+							</div> 
+							</map>			
+						</div>
+					  <div class="caption">
+						<h4><?= $model6 ?></h4>
+						  <hr>
+						  <table class="table table-condensed">
+							<tbody>
+							  <tr>
+								<td>이름</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $name6 ?></td>
+							  </tr>
+							  <tr>
+								<td>브랜드</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $brand6 ?></td>
+							  </tr>
+							  <tr>
+								<td>가격</td>
+								<td>&nbsp;&nbsp;&nbsp;<?= $price6 ?></td>
+							  </tr>
+							  <tr>
+								<td>링크</td>
+								<td>&nbsp;&nbsp;&nbsp;<a href="<?= $link6 ?>"><?= $link6 ?> </a></td>
+							  </tr>
+							</tbody>
+						  </table>
+					  </div>
+					</div>
 					
 					
 					  </div>
