@@ -1,3 +1,3 @@
 # CHMK
-Our ambitious project
+Our ambitious project (unfinished)
 - Video playing website with additional features
